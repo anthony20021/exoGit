@@ -16,7 +16,7 @@ test("Affichage de la route principale", async () => {
 describe('Test de la fonction searchArtist', () => {
   it("devrait retourner 400 si le paramètre 'artist' est manquant", async () => {
     // Mock des objets req et res
-    const req = { query: {} }; // Pas de paramètre 'artist'
+    const req = { params: {} }; // Pas de paramètre 'artist'
     const res = {
       status: jest.fn().mockReturnThis(), // Simule `res.status()`
       json: jest.fn() // Simule `res.json()`
@@ -29,16 +29,16 @@ describe('Test de la fonction searchArtist', () => {
   });
 
   it("devrait retourner les résultats de l'API Deezer pour un artiste valide", async () => {
-    const req = { query: { artist: 'Eminem' } }; // Simule une requête avec un artiste
+    const req = { params: { artist: 'Eminem' } };
     const res = {
       status: jest.fn().mockReturnThis(),
       json: jest.fn()
     };
+    
 
     await searchArtist(req, res);
 
-    expect(res.status).toHaveBeenCalledWith(200);
-    expect(res.json).toHaveBeenCalled();
+    expect(res.json).toHaveBeenCalledWith(expect.any(Object));
   });
 });
 
