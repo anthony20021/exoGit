@@ -1,6 +1,6 @@
-# 🎵 Projet Spotify API avec Node.js & Express
+# 🎵 Projet Deezer API avec Node.js & Express
 
-Ce projet est une application web utilisant l'API Spotify pour rechercher des artistes, afficher des informations sur eux, consulter les tops par genre musical et bien plus encore.
+Ce projet est une application web utilisant l'API Deezer pour rechercher des artistes, afficher des informations sur eux, consulter les tops par genre musical et bien plus encore.
 
 ## 🚀 Fonctionnalités
 - 🔍 Recherche d'artistes
@@ -12,7 +12,7 @@ Ce projet est une application web utilisant l'API Spotify pour rechercher des ar
 ## 🛠 Technologies utilisées
 - **Node.js**
 - **Express.js**
-- **Spotify Web API**
+- **Deezer Web API**
 - **Dotenv** (pour la gestion des variables d'environnement)
 
 ## 📦 Installation
@@ -39,10 +39,16 @@ PORT=3000
 npm run start
 ```
 
+5. **Tester les performances**
+```bash
+pip install locust
+locust -f ./config/locustfile.py --host=http://localhost:3000
+```
+
 Le serveur sera accessible sur `http://localhost:3000`.
 
 ## 🔗 Ressources utiles
-- 📄 [Spotify Developer Docs](https://developer.spotify.com/documentation/web-api/)
+- 📄 [Deezer Developer Docs](https://developers.deezer.com/api)
 - 📜 [Express.js Documentation](https://expressjs.com/)
 
 ---
