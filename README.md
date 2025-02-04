@@ -39,6 +39,12 @@ PORT=3000
 npm run start
 ```
 
+4. **Tester les performances**
+```bash
+pip install locust
+locust -f ./config/locustfile.py --host=http://localhost:3000
+```
+
 Le serveur sera accessible sur `http://localhost:3000`.
 
 ## 🔗 Ressources utiles
