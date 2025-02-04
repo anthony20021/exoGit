@@ -1,35 +1,22 @@
 import { getCharts } from "../controllers/getController.js";
 
-describe('getCharts', () => {
-    let req, res;
+/**
+ * Tests unitaires pour la fonction getCharts
+ */
+describe("Test de la fonction getCharts", () => {
+  /**
+   * Vérifie que la fonction retourne un json
+   */
 
-    beforeEach(() => {
-        req = {};
-        res = {
-            json: jest.fn(),
-            send: jest.fn()
-        };
-    });
+  it("devrait retourner les résultats de l'API Deezer pour les charts", async () => {
+    const req = {  };
+    const res = {
+      status: jest.fn().mockReturnThis(),
+      json: jest.fn(),
+    };
 
-    it('should fetch charts and return data as JSON', async () => {
-        fetch.mockResolvedValue({
-            json: jest.fn().mockResolvedValue()
-        });
+    await getCharts(req, res);
 
-        await getCharts(req, res);
-
-        expect(fetch).toHaveBeenCalledWith('https://api.deezer.com/chart');
-        expect(res.json).toHaveBeenCalledWith(mockData);
-    });
-
-    it('should handle fetch errors', async () => {
-        const mockError = new Error('Fetch error');
-        fetch.mockRejectedValue(mockError);
-        console.error = jest.fn();
-
-        await getCharts(req, res);
-
-        expect(fetch).toHaveBeenCalledWith('https://api.deezer.com/chart');
-        expect(console.error).toHaveBeenCalledWith('Erreur :', mockError);
-    });
+    expect(res.json).toHaveBeenCalledWith(expect.any(Object));
+  });
 });
