@@ -17,7 +17,7 @@ export const searchAlbum = async (req, res) => {
         const response = await fetch(url);
         const data = await response.json();
 
-        res.json(albums);
+        res.json(data);
     } catch (error) {
         console.error("Erreur lors de la récupération des albums :", error);
         res.status(500).json({ error: "Erreur interne du serveur." });
