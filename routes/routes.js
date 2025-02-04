@@ -1,9 +1,8 @@
 import express from 'express';
+import { firstController } from '../controllers/index.js';
 
 const router = express.Router();
 
-router.get('', (req, res) => {
-    res.send("Bienvenue dans l'API musique !");
-});
+router.get('', firstController);
 
 export default router;
