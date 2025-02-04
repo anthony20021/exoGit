@@ -10,16 +10,16 @@ describe("Test de la fonction searchArtist", () => {
    */
   it("devrait retourner 400 si le paramètre 'album' est manquant", async () => {
     // Mock des objets req et res
-    const req = { params: {} }; // Pas de paramètre 'album'
+    const req = { params: {} }; // Pas de paramètre 'album', on simule req
     const res = {
       status: jest.fn().mockReturnThis(), // Simule `res.status()`
       json: jest.fn(), // Simule `res.json()`
     };
 
-    await searchAlbum(req, res);
+    await searchAlbum(req, res); // On appelle la fonction
     expect(res.status).toHaveBeenCalledWith(400); // Vérifie que le statut est 400
-    expect(res.json).toHaveBeenCalledWith(expect.objectContaining({
-        error: "Veuillez fournir un nom d'album.",
+    expect(res.json).toHaveBeenCalledWith(expect.objectContaining({ 
+        error: "Veuillez fournir un nom d'album.", //On vérifie le message d'erreur
     }));
     
   });
