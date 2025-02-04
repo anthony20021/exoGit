@@ -1,5 +1,5 @@
 import request from "supertest";
-import app from "../server.js";
+import app from "../index.js";
 
 describe("Recherche d'artiste avec Deezer API", () => {
     it("devrait retourner des résultats pour un artiste donné", async () => {
