@@ -7,6 +7,6 @@ const router = express.Router();
 
 router.get('', firstController);
 router.get('/genre/:number', genreController);
-router.get("/api/search", searchArtist);
+router.get("/api/search/:artist", searchArtist);
 
 export default router;
