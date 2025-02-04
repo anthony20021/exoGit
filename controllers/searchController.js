@@ -11,6 +11,7 @@ export const searchArtist = async (req, res) => {
         const response = await fetch(url);
         const data = await response.json();
         
+        
         res.json(data);
     } catch (error) {
         res.status(500).json({ message: "Erreur lors de la récupération des données.", error: error.message });
