@@ -1,4 +1,4 @@
-import { getCharts } from "../controllers/getController.js";
+import { chartsController } from "../controllers/chartsController.js";
 
 /**
  * Tests unitaires pour la fonction getCharts
@@ -9,13 +9,13 @@ describe("Test de la fonction getCharts", () => {
    */
 
   it("devrait retourner les résultats de l'API Deezer pour les charts", async () => {
-    const req = {  };
+    const req = {};
     const res = {
       status: jest.fn().mockReturnThis(),
       json: jest.fn(),
     };
 
-    await getCharts(req, res);
+    await chartsController(req, res);
 
     expect(res.json).toHaveBeenCalledWith(expect.any(Object));
   });

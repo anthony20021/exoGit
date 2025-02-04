@@ -1,15 +1,16 @@
-import express from 'express';
-import { firstController, searchAlbum } from '../controllers/index.js';
-import { genreController } from '../controllers/genreController.js';
-import { searchArtist } from "../controllers/searchController.js";
-import { getCharts } from "../controllers/getController.js";
+import express from "express";
+import { mainController } from "../controllers/mainController.js";
+import { genreController } from "../controllers/genreController.js";
+import { artistController } from "../controllers/artistController.js";
+import { chartsController } from "../controllers/chartsController.js";
+import { albumController } from "../controllers/albumController.js";
 
 const router = express.Router();
 
-router.get('', firstController);
-router.get('/genre/:number', genreController);
-router.get("/charts", getCharts);
-router.get("/search/:artist", searchArtist);
-router.get("/albums/:album", searchAlbum); // Ajout de la route de recherche
+router.get("/", mainController);
+router.get("/charts", chartsController);
+router.get("/genre/:number", genreController);
+router.get("/artist/:artist", artistController);
+router.get("/album/:album", albumController);
 
 export default router;
