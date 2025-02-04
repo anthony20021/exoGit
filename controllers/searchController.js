@@ -6,7 +6,7 @@ export const searchArtist = async (req, res) => {
             return res.status(400).json({ message: "Le paramètre 'artist' est requis." });
         }
         
-        const url = `https://api.deezer.com/search?q=artist:"${artist}"`;
+        const url = `https://api.deezer.com/search?q="${artist}"`;
 
         const response = await fetch(url);
         const data = await response.json();

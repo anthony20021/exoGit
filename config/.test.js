@@ -29,7 +29,7 @@ describe('Test de la fonction searchArtist', () => {
   });
 
   it("devrait retourner les résultats de l'API Deezer pour un artiste valide", async () => {
-    const req = { params: { artist: 'Eminem' } };
+    const req = { params: { q: 'Eminem' } };
     const res = {
       status: jest.fn().mockReturnThis(),
       json: jest.fn()
