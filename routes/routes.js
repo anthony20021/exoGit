@@ -5,6 +5,6 @@ import { genreController } from '../controllers/genreController.js';
 const router = express.Router();
 
 router.get('', firstController);
-router.get('/genre', genreController);
+router.get('/genre/:number', genreController);
 
 export default router;
