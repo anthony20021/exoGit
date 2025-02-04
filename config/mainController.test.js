@@ -1,4 +1,4 @@
-import { firstController } from "../controllers";
+import { mainController } from "../controllers/mainController.js";
 
 /**
  * Test for the main route display
@@ -13,7 +13,7 @@ test("Affichage de la route principale", async () => {
   };
 
   // Call the firstController with the mock request and response
-  await firstController(req, res);
+  await mainController(req, res);
 
   // Assert that res.send was called with the expected welcome message
   expect(res.send).toHaveBeenCalledWith("Bienvenue dans l'API musique !");

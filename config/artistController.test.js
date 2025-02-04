@@ -1,9 +1,9 @@
-import { searchArtist } from "../controllers/searchController"; // Importation de ton contrôleur
+import { artistController } from "../controllers/artistController.js"; // Importation de ton contrôleur
 
 /**
- * Tests unitaires pour la fonction searchArtist
+ * Tests unitaires pour la fonction artistController
  */
-describe("Test de la fonction searchArtist", () => {
+describe("Test de la fonction artistController", () => {
   /**
    * Vérifie que la fonction renvoie 400 si le paramètre 'artist' est manquant
    */
@@ -15,7 +15,7 @@ describe("Test de la fonction searchArtist", () => {
       json: jest.fn(), // Simule `res.json()`
     };
 
-    await searchArtist(req, res);
+    await artistController(req, res);
 
     expect(res.status).toHaveBeenCalledWith(400); // Vérifie que le statut est 400
     expect(res.json).toHaveBeenCalledWith({
@@ -33,7 +33,7 @@ describe("Test de la fonction searchArtist", () => {
       json: jest.fn(),
     };
 
-    await searchArtist(req, res);
+    await artistController(req, res);
 
     expect(res.json).toHaveBeenCalledWith(expect.any(Object));
   });
