@@ -16,7 +16,7 @@ test("Affichage de la route principale", async () => {
 describe('Test de la fonction searchArtist', () => {
   it("devrait retourner 400 si le paramètre 'artist' est manquant", async () => {
     // Mock des objets req et res
-    const req = { params: {} }; // Pas de paramètre 'artist'
+    const req = { params: {} }; 
     const res = {
       status: jest.fn().mockReturnThis(), // Simule `res.status()`
       json: jest.fn() // Simule `res.json()`
