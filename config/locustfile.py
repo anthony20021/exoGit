@@ -5,8 +5,8 @@ class WebsiteUser(HttpUser):
 
     @task
     def search_artist(self):
-        self.client.get("/api/artist=Eminem")  
+        self.client.get("/artist/Eminem")  
 
     @task
     def genre(self):
-        self.client.get("/api/genre=457")
+        self.client.get("/genre/457")
